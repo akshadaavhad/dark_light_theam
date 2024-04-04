@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Light theme switcher</title>
+    <style>
+
+        .img{
+            height: 80px;
+            width: 80px;
+            margin: 20px;
+            background-color: #fff;
+            border: solid 1px #000;
+            padding: 10px 20px;
+           
+            border-radius: 5px;
+        }
+        .text{
+            text-align: center;
+        }
+        .active{
+            border-radius: 50px;
+        }
+        .dark{
+            background-color: #000;
+            color: #fff;
+        }
+        .light{
+            background-color: #fff;
+            color: #000;
+        }
+       
+    </style>
+</head>
+<body id="body"><div class="box">
+    <h1 class="text">If you want to change the theam the you click on the sun button or moon button </h1>
+    <img src="moon.png"class="img"id="imgdark"onclick="darkMmode()">
+
+    <img src="sun.png"class="img"id="imglight"onclick="lightMode()">
+    </div>
+    
+    <script>
+function darkMmode(){
+    const imgdark = document.getElementById('imgdark');
+    imgdark.classList.add('active');
+    const imglight=document.getElementById('imglight');
+    imglight.classList.remove('active');
+
+    const bodyelement=document.getElementById('body');
+    bodyelement.className="dark";
+
+
+}
+function lightMode(){
+    const imgdark = document.getElementById('imgdark');
+    imgdark.classList.remove('active');
+    const imglight=document.getElementById('imglight');
+    imglight.classList.add('active');
+
+    const bodyelement=document.getElementById('body');
+    bodyelement.className="light";
+
+}
+
+    </script>
+</body>
+</html>
